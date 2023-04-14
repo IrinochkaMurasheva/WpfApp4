@@ -4,39 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Товар" Height="300" Width="425">
-    <Window.Resources>
-        <Style TargetType="TextBlock">
-            <Setter Property="Margin" Value="8" />
-        </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="Margin" Value="8" />
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="MinWidth" Value="60" />
-            <Setter Property="Margin" Value="8" />
-        </Style>
-    </Window.Resources>
+        Title="Товар" Height="450" Width="800" Background="AliceBlue">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="116*"/>
+            <RowDefinition Height="101*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <TextBlock Text="Имя товара" Margin="8,10,22,60" />
-        <TextBlock Text="Цена" Margin="10,49,20,17" />
-        <TextBlock Text="Описание" Margin="8,88,33,71" Grid.RowSpan="2" />
-
-        <TextBox x:Name="Name"   Text="{Binding Name}" Grid.Column="1" Margin="10,8,10,52" />
-        <TextBox x:Name="Price" Text="{Binding Price}" Grid.Column="1"  Margin="10,48,10,12"/>
-        <TextBox x:Name="Description"  Text="{Binding Description}" Grid.Column="1" Margin="10,88,10,62" Grid.RowSpan="2" />
-        <Image x:Name="image_qrcode" Grid.ColumnSpan="2" Margin="14,34,259,14" Grid.RowSpan="2" Grid.Row="1" />
-
-        <Button IsDefault="True" Click="Accept_Click" Grid.Column="1" Margin="196,26,52,38" Grid.Row="2" >
+        <TextBlock Text="Имя товара" Margin="40,33,622,157" Height="NaN" Width="NaN" />
+        <TextBlock Text="Цена" Margin="40,94,622,104" />
+        <TextBlock Text="Описание" Margin="37,157,620,41" RenderTransformOrigin="0.5,0.5" Height="NaN" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.294"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.705"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBox x:Name="Name"   Text="{Binding Name}" Margin="213,33,71,157" Height="NaN" Width="NaN" />
+        <TextBox x:Name="Price" Text="{Binding Price}" Margin="213,90,71,100" Height="NaN" Width="NaN"/>
+        <TextBox x:Name="Description"  Text="{Binding Description}" Margin="213,154,71,36" Height="NaN" Width="NaN" />
+        <Image x:Name="image_qrcode" Margin="54,218,559,39" Height="NaN" Width="NaN" Grid.RowSpan="2" />
+        <Button IsDefault="True"  Background="#FFE1FF" Click="Accept_Click" Margin="555,217,130,152" Height="NaN" Width="NaN" Grid.RowSpan="2" >
             <UIElement.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -46,7 +36,7 @@
                 </TransformGroup>
             </UIElement.RenderTransform> OK
         </Button>
-        <Button IsCancel="True" Content="Отмена" Grid.Column="1" Margin="196,76,52,74" Grid.Row="1" Grid.RowSpan="2" >
+        <Button IsCancel="True" Background="#FFE1FF" Content="Отмена" Margin="555,100,130,39" Height="NaN" Width="NaN" Grid.Row="1" >
             <UIElement.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -56,9 +46,7 @@
                 </TransformGroup>
             </UIElement.RenderTransform>
         </Button>
-        <Button  x:Name="qr" Click="qr_Click"  IsDefault="True"  Grid.Column="1" Content="QRCode" HorizontalAlignment="Left" Margin="75,89,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.RowSpan="2"/>
-
-
+        <Button  x:Name="qr" Click="qr_Click"  Background="#FFE1FF" IsDefault="True" Content="QRCode" HorizontalAlignment="Left" Margin="321,60,0,0" VerticalAlignment="Top" Height="42" Width="122" Grid.Row="1"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="158" Margin="56,218,0,0" VerticalAlignment="Top" Width="175" Grid.RowSpan="2"/>
     </Grid>
-
 </Window>

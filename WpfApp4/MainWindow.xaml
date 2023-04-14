@@ -4,13 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-         Title="Товары" Height="300" Width="425">
+         Title="Товары" Height="450" Width="800" Background="AliceBlue">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="50" />
-        </Grid.RowDefinitions>
-        <ListBox x:Name="usersList" ItemsSource="{Binding}" Margin="0,4,0,46" Grid.RowSpan="2">
+        <ListBox x:Name="usersList" ItemsSource="{Binding}" Height="NaN" Margin="0,29,0,94">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -23,11 +19,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-
-        <Button Content="Добавить" Margin="297,229,43,5" Click="Add_Click" Grid.RowSpan="2" />
-        <Button Content="Изменить" Margin="182,229,160,5" Click="Edit_Click" Grid.RowSpan="2"  />
-        <Button Content="Удалить" Margin="56,229,287,5" Click="Delete_Click" Grid.RowSpan="2"  />
-
+        <Button Content="Добавить"  Click="Add_Click" Background="#FFE1FF" Height="NaN" Margin="101,345,553,18" Width="NaN" />
+        <Button Content="Изменить"  Click="Edit_Click" Background="#FFE1FF" Height="NaN" Margin="327,345,327,18" Width="NaN" />
+        <Button Content="Удалить"  Click="Delete_Click" Background="#FFE1FF" Height="NaN" Margin="556,345,98,18" Width="NaN" />
 
     </Grid>
 </Window>
