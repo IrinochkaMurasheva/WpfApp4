@@ -6,7 +6,7 @@
         mc:Ignorable="d"
          Title="Товары" Height="450" Width="800" Background="AliceBlue">
     <Grid>
-        <ListBox x:Name="usersList" ItemsSource="{Binding}" Height="NaN" Margin="0,29,0,94">
+        <ListBox x:Name="productsList" ItemsSource="{Binding}" Height="NaN" Margin="0,29,0,94">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

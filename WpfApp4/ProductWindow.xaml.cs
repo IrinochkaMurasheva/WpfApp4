@@ -20,14 +20,14 @@ using WpfApp4;
 
 namespace SQLiteApp
 {
-    public partial class  UserWindow : Window
+    public partial class  ProductWindow : Window
     {
-        public User User { get; set; }
-        public UserWindow(User user)
+        public Product Product { get; set; }
+        public ProductWindow(Product product)
         {
             InitializeComponent();
-            User = user;
-            DataContext = User;
+            Product = product;
+            DataContext = Product;
         }
 
         void Accept_Click(object sender, RoutedEventArgs e)

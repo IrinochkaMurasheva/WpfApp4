@@ -42,11 +42,11 @@ namespace SQLiteApp
         // добавление
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            UserWindow UserWindow = new UserWindow(new User());
-            if (UserWindow.ShowDialog() == true)
+            ProductWindow ProductWindow = new ProductWindow(new Product());
+            if (ProductWindow.ShowDialog() == true)
             {
-                User User = UserWindow.User;
-                db.Users.Add(User);
+                Product Product = ProductWindow.Product;
+                db.Users.Add(Product);
                 db.SaveChanges();
             }
         }
@@ -54,30 +54,30 @@ namespace SQLiteApp
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             // получаем выделенный объект
-            User? user = usersList.SelectedItem as User;
+            Product? product = productsList.SelectedItem as Product;
             // если ни одного объекта не выделено, выходим
-            if (user is null) return;
+            if (product is null) return;
 
-            UserWindow UserWindow = new UserWindow(new User
+            ProductWindow ProductWindow = new ProductWindow(new Product
             {
-                Id = user.Id,
-                Price = user.Price,
-                Name = user.Name,
-                Description = user.Description
+                Id = product.Id,
+                Price = product.Price,
+                Name = product.Name,
+                Description = product.Description
                
             });
 
-            if (UserWindow.ShowDialog() == true)
+            if (ProductWindow.ShowDialog() == true)
             {
                 // получаем измененный объект
-                user = db.Users.Find(UserWindow.User.Id);
-                if (user != null)
+                product = db.Users.Find(ProductWindow.Product.Id);
+                if (product != null)
                 {
-                    user.Price = UserWindow.User.Price;
-                    user.Name = UserWindow.User.Name;
-                    user.Description = UserWindow.User.Description;
+                    product.Price = ProductWindow.Product.Price;
+                    product.Name = ProductWindow.Product.Name;
+                    product.Description = ProductWindow.Product.Description;
                     db.SaveChanges();
-                    usersList.Items.Refresh();
+                    productsList.Items.Refresh();
                 }
             }
         }
@@ -85,10 +85,10 @@ namespace SQLiteApp
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             // получаем выделенный объект
-            User? user = usersList.SelectedItem as User;
+            Product? product = productsList.SelectedItem as Product;
             // если ни одного объекта не выделено, выходим
-            if (user is null) return;
-            db.Users.Remove(user);
+            if (product is null) return;
+            db.Users.Remove(product);
             db.SaveChanges();
         }
         
